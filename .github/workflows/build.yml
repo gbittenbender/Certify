@@ -14,6 +14,9 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
 
+      - name: Restore NuGet packages
+        run: nuget restore Certify.sln
+
       - name: Build Certify
         run: msbuild Certify.sln /p:Configuration=Release /p:Platform="Any CPU"
 
